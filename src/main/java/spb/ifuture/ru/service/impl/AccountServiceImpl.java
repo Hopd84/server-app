@@ -2,6 +2,7 @@ package spb.ifuture.ru.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import spb.ifuture.ru.exceprion.ServiceException;
@@ -19,6 +20,7 @@ public class AccountServiceImpl implements AccountService {
     private final AccountStatistic accountStatistic;
     private final AccountRepository accountRepository;
 
+    @Cacheable(cacheNames = "account")
     @Override
     public Long getAmount(Integer id) {
         accountStatistic.getTotalOnGet().getAndIncrement();
