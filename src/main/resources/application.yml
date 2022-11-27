@@ -9,7 +9,7 @@ spring:
     password: yNh4(q-8Vi0l
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: validate
   sql:
     init:
       mode: always
