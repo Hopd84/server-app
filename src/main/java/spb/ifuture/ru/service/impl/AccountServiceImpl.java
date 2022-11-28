@@ -54,7 +54,7 @@ public class AccountServiceImpl implements AccountService {
         accountStatistic.getActiveOnAdd().getAndDecrement();
     }
 
-    @Scheduled(fixedRate = 2000)
+    @Scheduled(fixedRate = 1000)
     public void fixedRateSch(){
         log.info("totalOnGet: " + accountStatistic.getTotalOnGet());
         log.info("totalOnAdd: " + accountStatistic.getTotalOnAdd());
